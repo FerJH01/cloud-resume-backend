@@ -1,8 +1,9 @@
 name: Deploy Python backend to AWS Lambda
 on: [push]
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
+  cypress-run-job:
+    name: cypress-API-testing
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -14,8 +15,7 @@ jobs:
           build: npm run build
           start: npm start
 
-jobs:
-  deploy-source:
+  deploy-source-job:
     name: Deploy lambda function from source
     runs-on: ubuntu-latest
     steps:
