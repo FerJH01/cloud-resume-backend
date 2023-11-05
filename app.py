@@ -21,5 +21,5 @@ def lambda_handler(event, context):
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*"
             },
-          "body": json.dumps({"Visit_Count": str(item["visitor_counter"] + 1)}, "This is from AWS Lambda")
+          "body": json.dumps({"Visit_Count": str(item["visitor_counter"] + 1)})
     }
