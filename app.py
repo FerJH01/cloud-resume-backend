@@ -18,9 +18,8 @@ def lambda_handler(event, context):
     return{
             "statusCode": 200,
             "headers": {
-                "body":"This is working as expected from AWS Lambda integration with GitHub Actions",
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*"
             },
-          "body": json.dumps({"Visit_Count": str(item["visitor_counter"] + 1)})
+          "body": json.dumps({"Visit_Count": str(item["visitor_counter"] + 1)}, "This is from AWS Lambda")
     }
