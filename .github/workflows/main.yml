@@ -6,15 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: actions/checkout@v2
+      - name: Install node
+        uses: actions/setup-node@v2
         with:
-          working-directory: backend
-          build: npm run build
-          start: npm start
+          node:version: "14"
+      - name: Install dependencies
+        run: npm install
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
 
   deploy-source-job:
     needs: cypress-run-job
