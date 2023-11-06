@@ -4,9 +4,9 @@ jobs:
   cypress-run-job:
     name: cypress-API-testing
     runs-on: ubuntu-latest
-   steps:
-     - name: Checkout GitCode
-       uses: actions/checkout@v2
+    steps:
+      - name: Checkout GitCode
+        uses: actions/checkout@v2
 
   deploy-source-job:
     needs: cypress-run-job
